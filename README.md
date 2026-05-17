@@ -44,6 +44,9 @@ High-Resolution-Finite-Volume-for-LKM/
 │       ├── plot_two_component.m
 │       └── plot_temporal_moments.m
 │
+├── figures/
+│   └── chromatography_process.png
+│
 ├── papers/
 └── examples/
 ```
@@ -64,38 +67,41 @@ The nonlinear Lumped Kinetic Model (LKM) implemented in this repository is desig
 
 ## Mathematical Model
 
-The governing nonlinear lumped kinetic model can be written as:
+The governing nonlinear lumped kinetic model can be written as
 
 $$
 \frac{\partial c_i}{\partial t}
-
-* u \frac{\partial c_i}{\partial z}
-  =
-  D_{z,i}\frac{\partial^2 c_i}{\partial z^2}
-
++
+u \frac{\partial c_i}{\partial z}
+=
+D_{z,i}\frac{\partial^2 c_i}{\partial z^2}
 -
-
 F K_{L,i}(q_i^* - q_i)
 $$
 
-with adsorption kinetics:
+where $c_i$ denotes the concentration in the mobile phase, $q_i$ represents the concentration in the stationary phase, $u$ is the interstitial velocity, $D_{z,i}$ is the axial dispersion coefficient, and $K_{L,i}$ denotes the mass transfer coefficient.
+
+The adsorption kinetics are modeled as
 
 $$
 \frac{\partial q_i}{\partial t}
-===============================
-
+=
 K_{L,i}(q_i^* - q_i)
 $$
 
-and nonlinear Langmuir equilibrium relation:
+where $q_i^*$ is the equilibrium adsorption concentration.
+
+The nonlinear Langmuir equilibrium relation is given by
 
 $$
 q_i^* =
 \frac{K_{H,i} c_i}
-{1 + \sum_j b_j c_j}
+{1 + \sum_{j} b_j c_j}
 $$
 
-The framework incorporates Linear Solvent Strength (LSS) theory for solvent-dependent model parameters.
+where $K_{H,i}$ denotes the Henry coefficient and $b_j$ represents the nonlinear adsorption parameters.
+
+The framework further incorporates Linear Solvent Strength (LSS) theory for solvent-dependent transport and adsorption parameters under gradient elution operating conditions.
 
 ---
 
@@ -129,8 +135,8 @@ examples/
 
 ## Requirements
 
-* MATLAB R2018a or newer
-* MATLAB ODE Suite
+- MATLAB R2018a or newer
+- MATLAB ODE Suite
 
 ---
 
