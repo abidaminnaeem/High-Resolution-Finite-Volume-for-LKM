@@ -55,7 +55,7 @@ High-Resolution-Finite-Volume-for-LKM/
 The general liquid chromatography process consists of a mobile phase carrying injected solute species through a packed chromatographic column where separation occurs because of different adsorption and desorption dynamics between the mobile and stationary phases. The pump drives the solvent through the system, the injector introduces the sample mixture, and the detector records the elution profiles of separated components. The obtained chromatograms are then processed computationally for further analysis.
 
 <p align="center">
-  <img src="Picture1.jpg" width="700"/>
+  <img src="figures/chromatography_process.png" width="700"/>
 </p>
 
 The nonlinear Lumped Kinetic Model (LKM) implemented in this repository is designed to mathematically describe these transport and adsorption mechanisms under gradient elution operating conditions. The framework incorporates convection, axial dispersion, nonlinear adsorption equilibrium, and finite mass transfer kinetics using high-resolution finite volume discretizations.
