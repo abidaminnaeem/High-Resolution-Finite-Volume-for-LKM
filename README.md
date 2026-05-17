@@ -6,33 +6,7 @@ A MATLAB framework for the numerical simulation of nonlinear and non-equilibrium
 
 ## Overview
 
-This repository provides a modular MATLAB implementation for solving nonlinear chromatographic transport models arising in liquid chromatography. The framework is based on:
-
-* Lumped Kinetic Models (LKM)
-* Gradient elution chromatography
-* Nonlinear Langmuir adsorption isotherms
-* High-resolution finite volume methods (HR-FVM)
-* TVD flux limiting schemes
-* Koren limiter discretization
-* Semi-discrete PDE formulations
-* Temporal moment analysis
-
-The implementation is designed for reproducible scientific computing research in chromatographic process modeling and numerical PDEs.
-
----
-
-## Features
-
-* High-resolution finite volume schemes
-* Koren TVD flux limiter implementation
-* Nonlinear Langmuir adsorption modeling
-* Linear Solvent Strength (LSS) theory
-* Gradient elution chromatography simulation
-* Axial dispersion and mass transfer modeling
-* Single and multicomponent simulations
-* Temporal moment analysis
-* Modular MATLAB implementation
-* Reproducible computational framework
+This repository provides a modular MATLAB framework for the numerical simulation of nonlinear and non-equilibrium gradient elution chromatography using Lumped Kinetic Models (LKM) and high-resolution finite volume methods (HR-FVM). The developed computational framework incorporates nonlinear Langmuir adsorption isotherms, Linear Solvent Strength (LSS) theory, axial dispersion, finite mass transfer kinetics, and gradient elution effects arising in chromatographic transport processes. The numerical implementation is based on Total Variation Diminishing (TVD) finite volume discretizations together with Koren flux limiter schemes for accurately capturing steep concentration fronts while reducing numerical diffusion and spurious oscillations. The repository supports both single- and multicomponent chromatography simulations, temporal moment analysis, and reproducible computational studies for chromatographic separation processes.
 
 ---
 
@@ -76,6 +50,18 @@ High-Resolution-Finite-Volume-for-LKM/
 
 ---
 
+## General Chromatographic Process
+
+The general liquid chromatography process consists of a mobile phase carrying injected solute species through a packed chromatographic column where separation occurs because of different adsorption and desorption dynamics between the mobile and stationary phases. The pump drives the solvent through the system, the injector introduces the sample mixture, and the detector records the elution profiles of separated components. The obtained chromatograms are then processed computationally for further analysis.
+
+<p align="center">
+  <img src="Picture1.jpg" width="700"/>
+</p>
+
+The nonlinear Lumped Kinetic Model (LKM) implemented in this repository is designed to mathematically describe these transport and adsorption mechanisms under gradient elution operating conditions. The framework incorporates convection, axial dispersion, nonlinear adsorption equilibrium, and finite mass transfer kinetics using high-resolution finite volume discretizations.
+
+---
+
 ## Mathematical Model
 
 The governing nonlinear lumped kinetic model can be written as:
@@ -115,36 +101,13 @@ The framework incorporates Linear Solvent Strength (LSS) theory for solvent-depe
 
 ## Numerical Method
 
-The numerical framework uses:
-
-* Semi-discrete finite volume methods
-* High-resolution TVD discretization
-* Koren flux limiter
-* Backward difference discretization
-* ODE45 time integration
-* Conservative flux formulations
-
-The method is designed to:
-
-* reduce numerical diffusion,
-* avoid spurious oscillations,
-* accurately capture sharp chromatographic fronts,
-* preserve numerical stability.
+The numerical framework employs semi-discrete high-resolution finite volume methods for solving the nonlinear convection-diffusion-reaction systems arising from the chromatographic Lumped Kinetic Model. The governing partial differential equations are spatially discretized using conservative finite volume formulations combined with TVD flux-limiting strategies and Koren limiter reconstructions to accurately resolve sharp concentration gradients. Time integration is performed using MATLAB ODE solvers, particularly ODE45, resulting in a robust and reproducible computational framework suitable for nonlinear chromatographic transport simulations. The numerical approach is specifically designed to preserve stability, minimize numerical oscillations, and reduce excessive numerical diffusion in convection-dominated regimes.
 
 ---
 
 ## Example Applications
 
-This repository can be used for:
-
-* Single-component chromatography
-* Multicomponent chromatography
-* Gradient elution analysis
-* Core-shell particle studies
-* Temporal moment calculations
-* Mass transfer studies
-* Dispersion analysis
-* Nonlinear adsorption analysis
+The computational framework can be used for a broad range of chromatographic separation studies, including single-component and multicomponent gradient elution chromatography, nonlinear adsorption analysis, temporal moment analysis, mass transfer investigations, and axial dispersion studies. The framework also supports simulations involving core-shell particle configurations and nonlinear transport behavior under varying operating conditions. Owing to its modular structure, the repository can further serve as a baseline platform for benchmarking numerical methods and developing advanced machine learning or operator-learning surrogate models for chromatographic systems.
 
 ---
 
@@ -168,21 +131,6 @@ examples/
 
 * MATLAB R2018a or newer
 * MATLAB ODE Suite
-
----
-
-## Future Extensions
-
-Potential future developments include:
-
-* GPU acceleration
-* Adaptive mesh refinement
-* Bayesian parameter estimation
-* Data assimilation methods
-* DeepONet/FNO surrogate modeling
-* Neural operator extensions
-* Physics-informed machine learning
-* Multi-column chromatography systems
 
 ---
 
@@ -218,3 +166,9 @@ If you use this repository in your research, please cite the associated publicat
   publisher={Hindawi}
 }
 ```
+
+---
+
+## License
+
+This project is distributed under the MIT License.
