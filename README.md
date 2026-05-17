@@ -69,7 +69,9 @@ The nonlinear Lumped Kinetic Model (LKM) implemented in this repository is desig
 
 The governing nonlinear lumped kinetic model can be written as
 
-$$
+<p align="center">
+
+$\displaystyle
 \frac{\partial c_i}{\partial t}
 +
 u \frac{\partial c_i}{\partial z}
@@ -77,27 +79,37 @@ u \frac{\partial c_i}{\partial z}
 D_{z,i}\frac{\partial^2 c_i}{\partial z^2}
 -
 F K_{L,i}(q_i^* - q_i)
-$$
+$
+
+</p>
 
 where $c_i$ denotes the concentration in the mobile phase, $q_i$ represents the concentration in the stationary phase, $u$ is the interstitial velocity, $D_{z,i}$ is the axial dispersion coefficient, and $K_{L,i}$ denotes the mass transfer coefficient.
 
 The adsorption kinetics are modeled as
 
-$$
+<p align="center">
+
+$\displaystyle
 \frac{\partial q_i}{\partial t}
 =
 K_{L,i}(q_i^* - q_i)
-$$
+$
+
+</p>
 
 where $q_i^*$ is the equilibrium adsorption concentration.
 
 The nonlinear Langmuir equilibrium relation is given by
 
-$$
+<p align="center">
+
+$\displaystyle
 q_i^* =
 \frac{K_{H,i} c_i}
 {1 + \sum_{j} b_j c_j}
-$$
+$
+
+</p>
 
 where $K_{H,i}$ denotes the Henry coefficient and $b_j$ represents the nonlinear adsorption parameters.
 
