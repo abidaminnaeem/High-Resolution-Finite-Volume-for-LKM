@@ -71,7 +71,7 @@ The governing nonlinear lumped kinetic model can be written as
 
 <p align="center">
 
-$$\displaystyle
+$\displaystyle
 \frac{\partial c_i}{\partial t}
 +
 u \frac{\partial c_i}{\partial z}
@@ -79,7 +79,7 @@ u \frac{\partial c_i}{\partial z}
 D_{z,i}\frac{\partial^2 c_i}{\partial z^2}
 -
 F K_{L,i}(q_i^* - q_i)
-$$
+$
 
 </p>
 
@@ -89,11 +89,11 @@ The adsorption kinetics are modeled as
 
 <p align="center">
 
-$$\displaystyle
+$\displaystyle
 \frac{\partial q_i}{\partial t}
 =
 K_{L,i}(q_i^* - q_i)
-$$
+$
 
 </p>
 
